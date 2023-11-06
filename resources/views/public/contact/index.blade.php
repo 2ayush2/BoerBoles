@@ -12,6 +12,10 @@
             Your request has been submitted successfully.
         </div>
 
+        <div id="error-message" class="alert alert-danger wow fadeInUp" style="display: none;">
+            Your request was submitted but there was a problem sending the email.
+        </div>
+
 
         <h1 class="text-center wow fadeInUp">Get in Touch</h1>
 
@@ -69,7 +73,10 @@
 
 
             </div>
-            <button type="submit" id="submitForm" class="btn btn-primary wow zoomIn">Send Message</button>
+            <button type="submit" id="submitForm" class="btn btn-primary wow zoomIn"> <span id="submitButtonText">Send Message</span>
+                <span id="submitButtonLoader" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i> Submitting...
+                </span></button>
         </form>
     </div>
 </div>
@@ -103,10 +110,14 @@
             e.preventDefault();
 
             var form = $(this);
+            var submitButton = $('#submitForm');
+            var submitButtonText = $('#submitButtonText');
+            var submitButtonLoader = $('#submitButtonLoader');
 
             if (form[0].checkValidity()) {
-
-                document.getElementById("submitForm").disabled = true;
+                submitButton.attr('disabled', true);
+                submitButtonText.hide();
+                submitButtonLoader.show();
 
                 // If the form is valid, proceed with the AJAX request
                 $.ajax({
@@ -120,7 +131,6 @@
 
                             // Remove Bootstrap's 'was-validated' class to reset validation feedback
                             form.removeClass('was-validated');
-                            document.getElementById("submitForm").disabled = false;
 
                             // Display the success message
                             var successMessage = $('#success-message');
@@ -131,20 +141,41 @@
                                 successMessage.fadeOut('slow', function() {
                                     successMessage.hide();
                                 });
-                            }, 10000);
+                            }, 6000);
+
                             // Scroll to the top of the form
-                            // Scroll to the top of the page
                             $('html, body').animate({
                                 scrollTop: 0
                             }, 'slow');
                             $("#refresh").trigger('click');
 
+                        } else {
+                            // Clear the form values
+                            form[0].reset();
+
+                            // Remove Bootstrap's 'was-validated' class to reset validation feedback
+                            form.removeClass('was-validated');
+                            // Display the success message
+                            var errorMessage = $('#error-message');
+                            errorMessage.show();
+
+                            // Hide the success message after 10 seconds
+                            setTimeout(function() {
+                                errorMessage.fadeOut('slow', function() {
+                                    errorMessage.hide();
+                                });
+                            }, 6000);
+
+                            // Scroll to the top of the form
+                            $('html, body').animate({
+                                scrollTop: 0
+                            }, 'slow');
+                            $("#refresh").trigger('click');
                         }
                     },
                     error: function(response) {
-
+                        alert(response);
                         $("#refresh").trigger('click');
-
                         //name=captcha value empty
                         $("#captcha").val('');
 
@@ -152,8 +183,12 @@
                             key = key.replaceAll(".", "");
                             $("#" + key + '_error').show();
                         });
-                        document.getElementById("submitForm").disabled = false;
-
+                    },
+                    complete: function() {
+                        // Re-enable the submit button and hide the loading icon
+                        submitButton.attr('disabled', false);
+                        submitButtonText.show();
+                        submitButtonLoader.hide();
                     }
                 });
             } else {
@@ -163,7 +198,6 @@
         });
     });
 </script>
-
 
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields

@@ -26,3 +26,18 @@ Route::get('refreshcaptcha', [CaptchaController::class, 'refreshCaptcha'])->name
 //contact
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact-us/save', [ContactController::class, 'save'])->name('contact.save');
+
+
+//email testg
+Route::get('/mail-preview', function () {
+    $invoice = App\Models\Contact::find(1);
+    return new App\Mail\ContactUsMail($invoice);
+});
+
+
+
+//email testg
+Route::get('/mail-preview-admin', function () {
+    $invoice = App\Models\Contact::find(1);
+    return new App\Mail\ContactUsReceived($invoice);
+});
