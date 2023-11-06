@@ -13,8 +13,11 @@
                 <div class="col-sm-4 text-sm text-center text-primary"><strong>BABS</strong>&trade;</div>
                 <div class="col-sm-4 text-right text-sm">
                     <div class="social-mini-button">
-                        <a href="https://www.facebook.com/groups/664919947349983"><span class="mai-logo-facebook-f"></span></a>
-                        <a href="#"><span class="mai-logo-instagram"></span></a>
+                        <a href="#" target="_blank"><span class="mai-logo-facebook-f"></span></a>
+                        <a href="#" target="_blank"><span class="mai-logo-twitter"></span></a>
+                        <a href="#" target="_blank"><span class="mai-logo-google-plus-g"></span></a>
+                        <a href="#" target="_blank"><span class="mai-logo-instagram"></span></a>
+                        <a href="#" target="_blank"><span class="mai-logo-linkedin"></span></a>
                     </div>
                 </div>
             </div> <!-- .row -->
