@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CaptchaController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,10 @@ Route::get('refreshcaptcha', [CaptchaController::class, 'refreshCaptcha'])->name
 //contact
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact-us/save', [ContactController::class, 'save'])->name('contact.save');
+
+//content
+
+Route::get('/{slug}', [ContentController::class, 'show'])->name('content.show');
 
 
 //email testg

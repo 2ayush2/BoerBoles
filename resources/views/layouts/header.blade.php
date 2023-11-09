@@ -42,23 +42,22 @@
                             About Us
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Who we are</a>
-                            <a class="dropdown-item" href="#">Corporate Governance</a>
-                            <a class="dropdown-item" href="#">Our Breeders</a>
-                            <a class="dropdown-item" href="#">Our Partners</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Membership</a>
+                            <a class="dropdown-item" href="{{route('content.show','who-we-are')}}">Who we are</a>
+                            <a class="dropdown-item" href="{{route('content.show','corporate-governance')}}">Corporate Governance</a>
+                            <a class="dropdown-item" href="{{route('content.show','our-breeders')}}">Our Breeders</a>
+                            <a class="dropdown-item" href="{{route('content.show','our-partners')}}">Our Partners</a>
+
                         </div>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">The Boerboel</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">What is a Boerboel</a>
-                            <a class="dropdown-item" href="#">Protecting the Boerboel Breed</a>
-                            <a class="dropdown-item" href="#">Breeding for the Future</a>
+                            <a class="dropdown-item" href="{{route('content.show','what-is-boerboel')}}">What is a Boerboel</a>
+                            <a class="dropdown-item" href="{{route('content.show','protecting-boerboel-breed')}}">Protecting the Boerboel Breed</a>
+                            <a class="dropdown-item" href="{{route('content.show','breed-for-future')}}">Breeding for the Future</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">The Boerboel Breed Standard</a>
+                            <a class="dropdown-item" href="{{route('content.show','boerboel-breed-standard')}}">The Boerboel Breed Standard</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -66,12 +65,12 @@
                             Learning Resources
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Buying a Boerboel</a>
-                            <a class="dropdown-item" href="#">Owning a Boerboel</a>
-                            <a class="dropdown-item" href="#">Breeding Boerboels</a>
+                            <a class="dropdown-item" href="{{route('content.show','buying-a-boerboel')}}">Buying a Boerboel</a>
+                            <a class="dropdown-item" href="{{route('content.show','owning-a-boerboel')}}">Owning a Boerboel</a>
+                            <a class="dropdown-item" href="{{route('content.show','breeding-boerboels')}}">Breeding Boerboels</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Articles</a>
-                            <a class="dropdown-item" href="#">Videos</a>
+                            <a class="dropdown-item" href="{{route('content.show','articles')}}">Articles</a>
+                            <a class="dropdown-item" href="{{route('content.show','videos')}}">Videos</a>
 
                         </div>
                     </li>
