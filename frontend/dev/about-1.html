@@ -107,29 +107,34 @@
   </div> <!-- .page-banner -->
 
   <div class="page-section">
-    <div class="breed-standard">
+    <div class="content-pd inner-content">
         <div class="container">
-            <div class="standard-intro">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam delectus corporis dolores officia provident quam fuga minus quibusdam, nulla quia placeat non voluptate, atque, reiciendis reprehenderit tempora fugit repellendus quod.
-                </p>
-            </div>
-            <div class="standard-desc">
-                <h2 class="heading">General appearance</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam veniam voluptatibus quas consectetur eligendi blanditiis, tenetur exercitationem odio amet ratione odit cum unde sequi minus error tempora saepe eum porro.</p>
-            </div>
-            <div class="standard-desc">
-                <h2 class="heading">Characteristics</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam veniam voluptatibus quas consectetur eligendi blanditiis, tenetur exercitationem odio amet ratione odit cum unde sequi minus error tempora saepe eum porro.</p>
-            </div>
-            <div class="standard-desc">
-                <h2 class="heading">Treatment</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam veniam voluptatibus quas consectetur eligendi blanditiis, tenetur exercitationem odio amet ratione odit cum unde sequi minus error tempora saepe eum porro.</p>
-            </div>
+<div class="title">
+    <h2>Introduction</h2>
+</div>
+<div class="row">
+    <div class="col-lg-9 col-md-8 pd-right">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tenetur dolorum voluptatum accusamus doloremque obcaecati unde, fugiat nesciunt ratione, amet dolore, mollitia itaque quod! Ea obcaecati excepturi sunt error earum!</p>
+   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt tempore nobis nihil. Dolorem, repellat, consequuntur porro enim dicta pariatur vero vitae cum excepturi dolore maxime! Vitae quod ipsam reiciendis soluta.</p>
+<div class="content-img"><img class="img-fluid" src="../assets/img/bg_image_1.jpg" alt=""></p>   
+</div>
+</div>
+<div class="col-lg-3 col-md-4 sidebar">
+    <div class="side-menu">
+        <ul >
+            <li><a href="aboutus.html">About</a></li> 
+             <li><a href="about-1.html">About-1</a></li> 
+             <li><a href="about-2.html">Next</a></li> 
+        </ul>
+    </div>
+</div>
         </div>
     </div>
+
   </div>
-<!--FOOTER-->
+  </div>
+
+
   <footer class="page-footer">
     <div class="container">
       <div class="row px-md-3">
@@ -195,6 +200,19 @@
 <script src="../assets/js/theme.js"></script>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
-  
+<script>
+     // Get the current page URL
+     var currentPage = window.location.href;
+
+// Get all anchor tags within the navbar
+var menuItems = document.querySelectorAll('.side-menu ul li a');
+// Update navbar color based on the active page
+menuItems.forEach(function (item) {
+    if (currentPage.indexOf(item.getAttribute('href')) !== -1) {
+        item.parentElement.classList.add("active");
+    }
+});
+</script>
+
 </body>
 </html>
